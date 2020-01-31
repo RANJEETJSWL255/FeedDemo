@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="list_margin">10dp</dimen>
+    <dimen name="secondLine">15sp</dimen>
+    <dimen name="firstLine">20sp</dimen>
+    <dimen name="marginTop">5dp</dimen>
+    <dimen name="marginLeft">5dp</dimen>
+</resources>

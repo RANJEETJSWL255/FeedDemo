@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="@dimen/list_margin">
+    <TextView
+        android:id="@+id/textViewTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/firstLine"
+        android:textStyle="bold"
+        android:textColor="@color/colorBlueHeader"
+        android:text="Murdochs needed counselling after hacking scandal, says magazine"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/marginTop">
+        <TextView
+            android:id="@+id/textViewDescription"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textSize="@dimen/secondLine"
+            android:textColor="@android:color/black"
+            android:layout_toLeftOf="@+id/imageViewRef"
+            android:text="NEW YORK: The British phone-hacking scandal brought simmering tensions"/>
+        <ImageView
+            android:id="@+id/imageViewRef"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="@dimen/marginLeft"
+            android:src="@mipmap/ic_launcher"/>
+    </RelativeLayout>
+
+</LinearLayout>
