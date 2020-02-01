@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="list_margin">10dp</dimen>
-    <dimen name="secondLine">15sp</dimen>
-    <dimen name="firstLine">20sp</dimen>
+    <dimen name="secondLine">14sp</dimen>
+    <dimen name="firstLine">18sp</dimen>
     <dimen name="marginTop">5dp</dimen>
     <dimen name="marginLeft">5dp</dimen>
+    <dimen name="imageWidth">150dp</dimen>
+    <dimen name="imageHeight">100dp</dimen>
+    <dimen name="cardViewMarginTopBottom">5dp</dimen>
+    <dimen name="cardViewMarginLeftRight">2dp</dimen>
+    <dimen name="cardViewElevation">5dp</dimen>
 </resources>

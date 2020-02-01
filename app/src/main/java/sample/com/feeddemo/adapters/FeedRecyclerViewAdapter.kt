@@ -8,7 +8,6 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import kotlinx.android.synthetic.main.feed_list_item.view.*
 import sample.com.feeddemo.R
 import sample.com.feeddemo.data.FeedItem
 
@@ -36,10 +35,14 @@ class FeedRecyclerViewAdapter(context: Context): RecyclerView.Adapter<FeedRecycl
     }
 
     override fun onBindViewHolder(holder: FeedViewHolder, position: Int) {
-        Glide.with(context)
-            .load(feedItems[position].imageHref)
-            .placeholder(R.drawable.ic_launcher_foreground)
-            .into(holder.imageViewRef)
+        if(feedItems[position].imageHref != null) {
+            holder.imageViewRef.visibility = View.VISIBLE
+            Glide.with(context)
+                .load(feedItems[position].imageHref)
+                .into(holder.imageViewRef)
+        }else{
+            holder.imageViewRef.visibility = View.GONE
+        }
         holder.textViewTitle.text = feedItems[position].title
         holder.textViewDescription.text = feedItems[position].description
     }
