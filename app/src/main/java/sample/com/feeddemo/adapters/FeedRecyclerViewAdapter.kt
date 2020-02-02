@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
@@ -35,12 +36,12 @@ class FeedRecyclerViewAdapter(context: Context): RecyclerView.Adapter<FeedRecycl
     }
 
     override fun onBindViewHolder(holder: FeedViewHolder, position: Int) {
-        if(feedItems[position].imageHref != null) {
+        if (feedItems[position].imageHref != null) {
             holder.imageViewRef.visibility = View.VISIBLE
             Glide.with(context)
                 .load(feedItems[position].imageHref)
                 .into(holder.imageViewRef)
-        }else{
+        } else {
             holder.imageViewRef.visibility = View.GONE
         }
         holder.textViewTitle.text = feedItems[position].title

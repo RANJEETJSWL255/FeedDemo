@@ -11,14 +11,27 @@ import sample.com.feeddemo.network.FeedService
 object FeedRepository {
     private var feedService: FeedService = ApiClient.feedService()
     val mutableLiveData: MutableLiveData<Feed> = MutableLiveData()
+    val errorMutableLiveData: MutableLiveData<String> = MutableLiveData()
+    val isLoadingMutableLiveData: MutableLiveData<Boolean> = MutableLiveData()
 
-    fun loadFeed() {
+    fun loadFeed(isOnLaunch: Boolean) {
+        if(isOnLaunch) {
+            isLoadingMutableLiveData.postValue(true)
+        }
          feedService.getFeed().enqueue(object: Callback<Feed>{
              override fun onFailure(call: Call<Feed>, t: Throwable) {
+                 errorMutableLiveData.postValue(t.localizedMessage)
+                 if(isLoadingMutableLiveData.value == true) {
+                     isLoadingMutableLiveData.postValue(false)
+                 }
              }
 
              override fun onResponse(call: Call<Feed>, response: Response<Feed>) {
                  mutableLiveData.postValue(response.body())
+                 errorMutableLiveData.postValue("")
+                 if(isLoadingMutableLiveData.value == true) {
+                     isLoadingMutableLiveData.postValue(false)
+                 }
              }
 
          })
